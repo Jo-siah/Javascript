@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated login</title>
+    <style>
+        body{
+            background-color: #322b2b;
+        }
+        .container{
+            display: flex;
+            flex-direction:column;
+            box-sizing: border-box;
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            width: 443px;
+            height: 440px;
+            
+            background: #151515;
+            border-radius: 35px;
+            box-shadow: 0px 1px 4px #b72c2c;
+
+        }
+        h1{
+            color: white;
+            margin: auto;
+        }
+        input{
+            width: 75%;
+            margin: auto;
+            background-color: #dbbdbd;
+            padding: 2%;
+            border-radius: 25%;
+            border: 0;
+
+        }
+        input::placeholder{
+            color: #333030;
+        }
+        button{
+            width: 20%;
+            padding: 1%;
+            border-radius: 25%;
+            color: white;
+            background-color: #b72c2c;
+            border: 0;
+            margin: auto;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+  <form action="" class="container">
+    <h1>Log in</h1>
+    <input type="text" class="username" autocomplete="on" placeholder="Username" id="username">
+    <input type="password" class="password" autocomplete="off" placeholder="Password" id="password">
+    <button type="submit">Log in</button>
+  </form> 
+  
+  <script>
+    const password =document.getElementById('password');
+    const username = document.getElementById('username')
+
+    document.getElementById('form').addEventListener('submit', (event)=> {
+        event.preventDefault()
+        valid = true
+
+        const password_value = password.value;
+        const username_value = username.value;
+
+        if (username_value.length < 5 || password_value.length < 12){
+            alert('The form has not been submitted : \n - A field is not valid.')
+            valid = false
+        }
+         if (valid)
+         alert('The form has been completed. \n We will proceed with the sending.')
+    })
+  </script>
+</body>
+</html>

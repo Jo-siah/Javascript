@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Palindrome checker</title>
+</head>
+<style>
+    body{
+        background-color: #160b0b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .firstText{
+        font-weight: bolder;
+        color:yellow;
+        font-style: oblique;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .section{
+        height: 70vh;
+        width: 70vh;
+        background-color:rgb(79, 28, 28) ;
+        border-radius: 15px;
+        box-shadow: -12px -12px 10px rgb(7, 1, 1);
+        position: relative;
+    }
+    .firstText{
+        text-align: center;
+
+    }
+    .inputString{
+        padding: 25px;
+        border: none;
+        color: white;
+        background-color: rgba(0,0,0,0.8);
+        margin-left: 50px;
+        margin-top: 50px;
+        width: 50vh;
+        border-radius: 15px;
+    }
+    .btn{
+
+        margin-top: 80px;
+        margin-left: 200px;
+        padding: 5px;
+        background-color: black;
+        color: yellow;
+        margin-top: 80px;
+        width: 79px;
+        transition:  button 0.2s;
+        height: 25px;
+    }
+    .btn:hover{
+        width: 82px;
+    }
+    .result{
+        
+        margin-top: 80px;
+        color: white;
+        text-align: center;
+    }
+    marquee{
+        border-radius: 15px;
+        border: 1.5px  white;
+        
+        background-color: rgb(140, 52, 52);
+    }
+</style>
+
+<body>
+    <div class="section">
+        <marquee behavior="" direction=""><p class="firstText">! A palindrome is a word that spells the same back and forth !  Type in a word to check </p></marquee>
+<input type="text" class="inputString" placeholder="Type in a word " class="inputvalue"><br>
+<button onclick="
+palindromeCheck();
+" class="btn">check</button>
+<p class="result"></p>
+    </div>
+
+    <script>
+        function palindromeCheck(){
+            let string = document.querySelector('.inputString').value;
+            let stringToLowerCase = string.toLowerCase();
+            let inverted = stringToLowerCase.split("").reverse("").join("");
+            if(stringToLowerCase === inverted &&inverted === stringToLowerCase){
+               document.querySelector('.result').innerHTML = "The word is a palindrome"
+            }else {
+                document.querySelector('.result').innerHTML = "Not a palindrome"
+                
+            }
+            if(string === ''){document.querySelector('.result').innerHTML = 'Please enter a word first'
+        }
+        };
+    </script>
+</body>
+</html>

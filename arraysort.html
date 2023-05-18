@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+<p id="beforeSort"></p>
+<p id="aftersort"></p>
+<p id="newsort"></p>
+<button id="afterSort" onclick="numberSort()">Sort</button>
+<button id="resort" onclick="resort()">resort</button>
+
+    <script>
+        let array1 = [1,2,3,4,5];
+      /* array1.push()
+        array1.pop()
+        array1.fill()
+        array1.join()
+        array1.shift()
+        array1.reverse()
+        array1.unshift(3);
+        array1.includes()
+        array1.map()
+        array1.filter()
+        array1.find()
+        array1.every()
+        array1.findIndex()
+        array1.reduce()*/
+
+        let function1 = [12 , 4 , 67 , 4 ,52 , 9 , 8 ];
+        document.getElementById("beforeSort").innerHTML = function1;
+       
+        //button.getElementById('afterSort').addEventListener('click', numberSort());
+
+        function numberSort(){ 
+        function1.sort(function(a,b){return a - b});
+        document.getElementById('aftersort').innerHTML = function1;
+        }
+        let newSort = function1;
+        function resort (){
+            newSort.sort(function(a , b){return b - a});
+            document.getElementById('newsort').innerHTML = newSort;
+        }
+
+    </script>
+</body>
+</html>

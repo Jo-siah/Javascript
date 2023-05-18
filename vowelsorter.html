@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vowel-sorter</title>
+</head>
+<body>
+    <input type="text" class="inputString">
+    <button onclick='vowelSort()'>check for the number of vowels</button>
+    <p class="vowelCount"></p>
+    <script>
+        function vowelSort(){
+            const vowels = ["a", "e", "i", "o", "u"];
+            let sorted = [];
+            let value = document.querySelector('.inputString').value;
+            let splitString  = value.split('');
+
+            for (let x = 0; x < splitString.length; x++){
+                if (vowels.includes(splitString[x])) {
+                    sorted.push(splitString[x]);
+                }
+            }
+            let numOfVowels = sorted.length;
+            if (numOfVowels > 0){
+                document.querySelector('.vowelCount').innerHTML = `There are ${numOfVowels} vowels in the string entry`;
+            }else{
+                document.querySelector('.vowelCount').innerHTML = 'There are no vowels in the string entry';
+            }
+            if (value.length === 1){
+                document.querySelector('.vowelCount').innerHTML =`This code does not work for letters`;
+            }
+            
+        }
+    </script>
+</body>
+</html>

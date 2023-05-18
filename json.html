@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <p class="js-text"></p>
+    <p class="js-text2"></p>
+    <script>
+        let person = {
+            name : "Josiah",
+            age:  30,
+            city : "Kasoa",
+            today : new Date()
+        };
+        let myArray = JSON.stringify(person);
+        document.querySelector('.js-text').innerHTML = myArray;
+
+       /* let myArray2 = Object.values(person);
+        dcocument.querySelector('.js-text2').innerHTML = myArray2;*/
+
+        for(let x in person){
+           let myArray2 = person[x]
+        }
+        document.querySelector('.js-text2').innerHTML = myArray2;
+
+    </script>
+</body>
+</html>

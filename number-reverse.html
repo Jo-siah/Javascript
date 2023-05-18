@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>number-reverse</title>
+    <style>
+        body{
+            background-color:orangered ;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
+        }
+        .reverseBox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            height: 50vh;
+            width: 50vh;
+            border: 1px dashed white;
+            border-radius: 10px;
+        }
+        .csstext{
+            height: 30px;
+            width: 80px;
+            border: 1px solid black;
+            color: white;
+        }
+        .button{
+            height: 30px;
+            width: 80px;
+            background-color: whitesmoke;
+            outline: none;
+            border: none;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        h3{
+            color: white;
+        }
+        .result{
+            color: orangered;
+            margin-right: 70px;
+            margin-top: 50px;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+   <div class="reverseBox">
+    <h3>Number reverse</h3>
+    
+    <input type="text" class="inputText" ><br>
+    <button onclick="
+    reverseNumber();
+    " class="button">Reverse</button>
+    <p class="result"></p>
+   </div>
+    <script>
+      /* function reverseNumber (n){
+        n = n + "";
+        return n.split("").reverse("").join("");
+       } 
+       console.log(Number(reverseNumber(5687)));*/
+       function reverseNumber(){
+        let value = document.querySelector('.inputText').value;
+        let reversed = value.split("").reverse("").join("");
+        document.querySelector('.result').innerHTML = `Reversed number is ${reversed}`
+
+       }
+       
+    </script>
+</body>
+</html>
